@@ -1,0 +1,5 @@
+node_modules
+public
+.merlin
+lib/
+.bsb.lock

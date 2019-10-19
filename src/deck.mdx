@@ -1,0 +1,501 @@
+import { Image, Head, Notes, Appear, } from 'mdx-deck'
+import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
+import QRCode from 'qrcode.react'
+
+import { Title } from './juice/Title'
+import Paragraph from './juice/Paragraph.bs'
+import SplitLayout from './juice/SplitLayout.bs'
+import ImageFit from './juice/Image.bs'
+import GlitchImage from './juice/GlitchImage.bs'
+import VideoBackground from './juice/VideoBackground.bs'
+import CodeSurfer from './juice/CodeSurfer.bs'
+
+import glitchFacesVideo from './images/glitched-faces.mp4'
+
+import glitchUnsettlingImage from './images/glitch-unsettling.jpg'
+import glitchContrastImage from './images/glitch-contrast.png'
+import glitchUnbreakableImage from './images/unbreakable.jpg'
+import glitchPerspectiveImage from './images/perspective.jpg'
+import glitchBust from './images/glitch-bust.jpeg'
+import astrocodersImage from './images/astrocoders.png'
+
+import fnmImage from './images/fnm.svg'
+import reveryImage from './images/revery.png'
+
+import variantSnippet from '!raw-loader!./snippets/VariantDemo.re' 
+import variantTypesTsSnippet from '!raw-loader!./snippets/VariantDemoTypes.ts' 
+import variantSwitchTsSnippet from '!raw-loader!./snippets/VariantDemoSwitch.ts' 
+
+import patternMatchingDemoTS from '!raw-loader!./snippets/PatternMatchingDemo.ts' 
+import patternMatchingDemoTS2 from '!raw-loader!./snippets/PatternMatchingDemo2.ts' 
+import patternMatchingDemoTS3 from '!raw-loader!./snippets/PatternMatchingDemo3.ts' 
+import patternMatchingDemoReason from '!raw-loader!./snippets/PatternMatchingDemo.re' 
+import patternMatchingDemoReasonError from '!raw-loader!./snippets/PatternMatchingDemoError.re' 
+import graphQLDemo from '!raw-loader!./snippets/GraphQLDemo.graphql' 
+import graphQLDemoReason from '!raw-loader!./snippets/GraphQLDemo.re'
+
+import reasonmlToolchain from './images/reasonml-architechture.svg'
+import stinks from './images/stinks.jpg'
+import stonks from './images/stonks.jpg'
+
+export const themes = [
+  highlight
+]
+
+<Head>
+  <title>Unbreakable apps with ECMAScript 2077</title>
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@fakenickels' />
+  <meta name='twitter:title' content='ReasonML, ES2077' />
+  <meta name='twitter:description' content='Unbreakable apps with ECMAScript 2077' />
+</Head>
+
+## Incoming from the future
+
+---
+
+<Title glitchText1="ES2077" variant="featured">
+  ReasonML
+</Title>
+
+---
+<SplitLayout>
+  <GlitchImage src={glitchBust} />
+
+  <div style={{textAlign: 'center'}}>
+    <h2>Gabriel R. Abreu</h2>
+    <p>Astrocoders</p>
+    <p>CTO Founder</p>
+    <p>Father</p>
+    <p>Bad Jokes Engineer</p>
+    <p>Creator of Epitath (hooks prior art)</p>
+    <p>and ReForm</p>
+  </div>
+</SplitLayout>
+
+--- 
+<Title variant="featured">
+  @fakenickels
+</Title>
+
+Twitter, GitHub, Reddit, Instagram 
+
+---
+
+<SplitLayout>
+
+  <div style={{width: '100%', height: '100%', padding: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+    <QRCode size="300" value="https://github.com/fakenickels/es2077-reactconf" />
+  </div>
+
+  <Title>Slides</Title>
+
+</SplitLayout>
+
+---
+
+<Title>What's ReasonML?</Title>
+
+<ul>
+  <li>Yet Another Awesome Tool Created by Facebook</li>
+  <Appear>
+    <li>Envisioned by React creator Jordan Walke</li>
+    <li>Think of it as an syntax/dialect for OCaml</li>
+    <li>OCaml is a super fast, type inferred, highly hackable FP language</li>
+  </Appear>
+</ul>
+
+---
+
+<SplitLayout>
+
+  <ImageFit src={stinks} />
+
+  # Put types in JS
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <ImageFit src={stonks} />
+
+  # Put JS in types
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <Image src={glitchUnbreakableImage} />
+
+  <Title>How unbreakable?</Title>
+</SplitLayout>
+
+---
+
+# Let's get philosophical
+
+>"Philosophically speaking, a problem is composed of many possible branches/conditions. Mishandling these conditions is the majority of what we call bugs."
+
+---
+
+# Let's get philosophical
+
+>"A type system doesn't magically eliminate bugs; it points out the unhandled conditions and asks you to cover them"
+
+---
+
+<CodeSurfer
+  code={variantSnippet}
+  language="reason"
+  highlights={[
+    [1, 1],
+    [4, 4],
+    [4, 9]
+  ]}
+/>
+
+---
+
+<SplitLayout>
+  <GlitchImage src={glitchContrastImage} />
+
+  <div>
+    <Title>Contrast</Title>
+    <Paragraph>with TypeScript</Paragraph>
+  </div>
+</SplitLayout>
+
+---
+
+# Types
+
+<CodeSurfer
+  code={variantTypesTsSnippet}
+  language="typescript"
+  highlights={[
+    [1, 5],
+    [7, 10],
+  ]}
+/>
+
+---
+
+# Pattern matching?
+
+<CodeSurfer
+  code={variantSwitchTsSnippet}
+  language="typescript"
+  highlights={[
+    [1, 1],
+    [2, 10],
+    [3, 3],
+    [7, 9],
+  ]}
+/>
+
+---
+
+# Not your grandma!
+
+<div style={{textAlign: 'center'}}>
+  <Paragraph>
+    Reason's type system is not just a powerful linter.
+    You use it to model your program from top to bottom.
+  </Paragraph>
+</div>
+
+---
+
+# ReasonML ❤️  React
+
+---
+
+# React demo
+
+<CodeSurfer
+  code={patternMatchingDemoReason}
+  language="reason"
+  highlights={[
+    [1, 2],
+    [6, 6],
+    [6, 13],
+    [9, 9],
+    [10, 10],
+    [12, 12],
+  ]}
+/>
+
+---
+
+# TS version
+
+<CodeSurfer
+  code={patternMatchingDemoTS}
+  language="jsx"
+  highlights={[
+    [3, 12],
+    [14, 14],
+    [15, 22],
+  ]}
+/>
+
+---
+
+# TS version
+
+<CodeSurfer
+  code={patternMatchingDemoTS2}
+  language="typescript"
+  highlights={[
+    [18, 18],
+  ]}
+/>
+
+---
+
+# TS version
+
+<CodeSurfer
+  code={patternMatchingDemoTS3}
+  language="typescript"
+  highlights={[
+    [17, 17],
+  ]}
+/>
+
+---
+
+# ReasonML
+
+<CodeSurfer
+  code={patternMatchingDemoReasonError}
+  language="reason"
+  highlights={[
+    [7, 13],
+    [6, 6],
+  ]}
+/>
+
+---
+
+<SplitLayout>
+  <GlitchImage src={glitchPerspectiveImage} />
+
+  <Title>Statically known types</Title>
+</SplitLayout>
+
+---
+
+<Title variant="featured">GraphQL</Title>
+
+---
+
+# GraphQL
+
+<CodeSurfer
+  code={graphQLDemo}
+  language="reason"
+  highlights={[
+    [1, 1],
+    [9, 9],
+  ]}
+/>
+
+---
+
+# ReasonML
+
+<CodeSurfer
+  code={graphQLDemoReason}
+  language="reason"
+  highlights={[
+    [1, 8],
+    [1, 1],
+    [12, 12],
+    [14, 27],
+    [16, 24],
+    [18, 24],
+    [19, 22],
+  ]}
+/>
+
+---
+
+<Title variant="featured">This is less tests</Title>
+
+---
+
+<Title variant="featured">This is less bugs to production</Title>
+
+---
+
+<Title variant="featured">This is the future</Title>
+
+---
+
+# Shared ecosystem
+
+- ReasonML brings together the OCaml community and the JS community
+- OCaml brings the safety and robustness the web needs
+
+---
+
+# JS Shared ecosystem
+
+- Install it with `npm i --global bs-platform`
+- Or with a starter `bsb -init demo`
+- Or with a React starter `bsb -init demo -theme react-hooks`
+
+---
+
+# Native ecosystem
+
+- Install it with `npm i --global esy pesy`
+- Or with a starter `mkdir demo && cd demo && pesy`
+
+---
+
+<SplitLayout>
+  <GlitchImage src={glitchPerspectiveImage} />
+
+  <Title>ReasonML toolchain</Title>
+</SplitLayout>
+
+---
+
+<img src={reasonmlToolchain} />
+
+---
+
+# Tools of the ecosystem
+
+- BuckleScript
+- esy.sh
+- Revery
+
+---
+
+<Title>BuckleScript</Title>
+
+<ul>
+  <li>Created by Bloomberg as a better alternative to js_of_ocaml</li>
+  <Appear>
+    <li>Powered by the ninja compiler, insane compile time</li>
+    <li>Readable output</li>
+  </Appear>
+</ul>
+
+---
+
+<Title>esy.sh</Title>
+
+<ul>
+  <li>Brings npm concepts for OCaml ecosystem and package manager (OPAM)</li>
+  <Appear>
+    <li>Created also by Jordan Walke</li>
+    <li>Easiness to create pre-compiled and multiplatform programs</li>
+    <li>Created with esy:</li>
+  </Appear>
+</ul>
+
+---
+
+<SplitLayout>
+  <ImageFit src={fnmImage} />
+
+  <div>
+    <Title>fnm</Title>
+    Fast and simple Node.js version manager, built in native ReasonML
+  </div>
+</SplitLayout>
+
+---
+<SplitLayout>
+  <ImageFit src={reveryImage} />
+
+  <div style={{textAlign: 'center'}}>
+    <Title>Revery</Title>
+    Build native, high-performance, cross-platform desktop apps with Reason!
+  </div>
+</SplitLayout>
+
+---
+<SplitLayout>
+  <GlitchImage src={glitchUnsettlingImage} />
+
+  <Title>Unsettling</Title>
+</SplitLayout>
+
+---
+
+<Title>Problems</Title>
+
+<div style={{padding: '40px'}}>
+  <ul>
+  <li>Mindset change</li>
+  <Appear>
+    <li>Syntax errors</li>
+    <li>Docs are sparse sometimes</li>
+    <li>Community is growing at a fast pace, but you may still not find everything you need</li>
+  </Appear>
+  </ul>
+</div>
+
+---
+
+<SplitLayout>
+
+  <div style={{width: '100%', height: '100%', padding: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+    <QRCode size="300" value="https://discord.gg/reasonml" />
+  </div>
+
+  <div>
+    <Title>discord.gg/reasonml</Title>
+
+    <Paragraph>
+      I just heard about Reason at ReactConf Brazil!
+    </Paragraph>
+  </div>
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <div style={{width: '100%', height: '100%', padding: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+    <ImageFit src={astrocodersImage} />
+  </div>
+
+  <div>
+    <Title>Astrocoders</Title>
+    <ul>
+      <li>https://vannamei.com.br</li>
+      <li>https://astrocoders.com</li>
+      <li>https://github.com/Astrocoders</li>
+      <li>https://github.com/Astrocoders/fullstack-challenge</li>
+    </ul>
+  </div>
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <VideoBackground src={glitchFacesVideo} />
+
+  <div>
+    <Title>Thank you!</Title>
+    <Title>Obrigado!</Title>
+    <Title>謝謝！</Title>
+  </div>
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <GlitchImage src={glitchPerspectiveImage} />
+
+  <Title>Questions?</Title>
+</SplitLayout>

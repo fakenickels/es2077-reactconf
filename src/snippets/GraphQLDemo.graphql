@@ -1,0 +1,10 @@
+enum UserRoleEnum { ADMIN, OPERATOR }
+
+type User {
+  name: String!
+  role: UserRoleEnum!
+}
+
+type Query {
+  me: User
+}
